@@ -1,0 +1,6 @@
+{
+  "name": "FNE360 — Emploi, Formation, Entrepreneuriat",
+  "description": "Construisez votre avenir professionnel avec FNE360. Plateforme nationale pour l'emploi, la formation et l'entrepreneuriat.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

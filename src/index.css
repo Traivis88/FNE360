@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-brand-blue: #1e4ad7;
+  --color-brand-green: #03a14a;
+  --color-brand-orange: #fa7c20;
+  --color-brand-purple: #a780e6;
+  --color-surface-blue: #e8f3ff;
+  --color-surface-green: #d8f9dd;
+  --color-background: #fcfbf8;
+  --color-foreground: #0f172a;
+  --color-card: #ffffff;
+  --color-border: #e4e7ec;
+  --color-muted-foreground: #64748b;
+  --color-primary-foreground: #ffffff;
+}
+
+:root {
+  --background: #fcfbf8;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --border: #e4e7ec;
+  --muted-foreground: #64748b;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print Styles for A4 Resume */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide everything except the CV sheet during print */
+  header, footer, nav, button, .no-print, [aria-label="Paramètres"] {
+    display: none !important;
+  }
+
+  #cv-document-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
